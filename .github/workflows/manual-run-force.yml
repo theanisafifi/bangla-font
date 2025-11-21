@@ -32,9 +32,6 @@ jobs:
       - name: Playwright Setup
         run: bunx playwright install --with-deps chromium
 
-      - name: Build fonts # Build all Bangla font packages in repository
-        run: bunx hixbe build --force
-
       - name: Generate fontlist
         run: bun run fontlist
 
