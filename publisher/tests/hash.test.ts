@@ -15,7 +15,7 @@ describe('hash functions', () => {
 		);
 		expect(files).toEqual([
 			expect.stringContaining(
-				'fontsource/packages/publish/tests/fixtures/package1/files/test.txt',
+				'publisher/tests/fixtures/package1/files/test.txt',
 			),
 		]);
 	});
