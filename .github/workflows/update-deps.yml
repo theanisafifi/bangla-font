@@ -1,0 +1,40 @@
+name: Update Hixbe Dependencies
+
+on:
+  repository_dispatch:
+    types: [update-deps]
+  workflow_dispatch:
+
+jobs:
+  update-deps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install
+        run: bun install --frozen-lockfile
+
+      - name: Update
+        run: bun upgrade --latest
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: update dependencies"
+          title: Update Hixbe Dependencies 🎉
+          body: |
+            This PR updates the Hixbe dependencies to the latest versions.
+            It was created automatically by a GitHub Action.
+          branch: update-hixbe-deps
+          delete-branch: true
+          labels: dependencies
+
+
+
+

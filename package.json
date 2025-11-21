@@ -1,0 +1,26 @@
+{
+	"name": "@hixbe/bangla-font",
+	"version": "0.0.1",
+	"description": "bangla fonts bundled into neat packages.",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"check-duplicates": "bun run scripts/check-duplicates.ts",
+		"fontlist": "bun run scripts/fontlist.ts",
+		"metadata": "bun run scripts/metadata.ts"
+	},
+	"author": "Hixbe <anis@hixbe.com>",
+	"license": "MIT",
+	"dependencies": {
+		"@types/node": "^22.14.1",
+		"consola": "^3.4.2",
+		"google-font-metadata": "^6.0.7",
+		"json-stringify-pretty-compact": "^4.0.0",
+		"pathe": "1.1.2"
+	},
+	"homepage": "https://hixbe.com",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hixbe/bangla-fonts.git"
+	}
+}

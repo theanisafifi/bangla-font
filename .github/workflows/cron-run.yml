@@ -1,0 +1,62 @@
+name: Build and Release Bangla Fonts [Weekly]
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Git for large repositories
+        run: |
+          git config diff.renameLimit 999999
+          git config merge.renameLimit 999999
+          git config core.preloadindex true
+          git config core.fscache true
+          git config gc.auto 0
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install
+        run: bun install
+
+      - name: Playwright Setup
+        run: bunx playwright install --with-deps chromium
+
+      - name: Build fonts # Build all Bangla font packages in repository
+        run: bunx hixbe build
+
+      - name: Remove Duplicates
+        run: bun run check-duplicates
+
+      - name: Generate fontlist
+        run: bun run fontlist
+
+      - name: Save Hixbe metadata
+        run: bun run metadata
+
+      - name: Setup Git Config
+        run: |
+          git config --global user.email "83556432+hixbe-bot@users.noreply.github.com"
+          git config --global user.name "hixbe-bot"
+
+      - name: Publish to NPM
+        run: npx @hixbe/font-publisher publish patch --yes --provenance
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+
+
+

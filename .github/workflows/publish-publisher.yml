@@ -1,0 +1,40 @@
+name: Publish Publisher Package
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'publisher/**'
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  publish-publisher:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install
+        run: cd publisher && bun install
+
+      - name: Build
+        run: cd publisher && bun run build
+
+      - name: Setup Git Config
+        run: |
+          git config --global user.email "83556432+hixbe-bot@users.noreply.github.com"
+          git config --global user.name "hixbe-bot"
+
+      - name: Publish to NPM
+        run: cd publisher && npm publisher --provenance
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
