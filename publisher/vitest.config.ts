@@ -1,8 +1,6 @@
-import { defineConfig } from 'vitest';
-
-export default defineConfig({
+export default {
 	test: {
 		clearMocks: true,
 		setupFiles: ['./tests/helpers/setup-tests.ts'],
 	},
-});
+};
