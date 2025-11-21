@@ -29,12 +29,7 @@ jobs:
       - name: Build
         run: cd publisher && bun run build
 
-      - name: Setup Git Config
-        run: |
-          git config --global user.email "83556432+hixbe-bot@users.noreply.github.com"
-          git config --global user.name "hixbe-bot"
-
       - name: Publish to NPM
-        run: cd publisher && npm publisher --provenance
+        run: cd publisher && npm publish --provenance
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

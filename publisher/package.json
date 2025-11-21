@@ -3,13 +3,13 @@
 	"version": "0.0.1",
 	"description": "Hixbe Font Publisher CLI Tool",
 	"bin": {
-		"hixbe-publisher": "dist/cli.mjs"
+		"hixbe-publish": "dist/cli.mjs"
 	},
 	"scripts": {
 		"build": "pkgroll --target=node14 && bun run ./scripts/add-hashbang.ts",
 		"dev": "bun run build && bun ./dist/cli.mjs",
-		"coverage": "vitest run --coverage",
-		"test": "vitest",
+		"coverage": "bunx vitest run --coverage",
+		"test": "bunx vitest",
 		"prepublish": "bun run build",
 		"ci:publish": "bun run prepublish && bun publisher",
 		"format": "biome format --write .",
