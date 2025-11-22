@@ -1,0 +1,26 @@
+$id: 'solaiman-lipi';
+$family: 'Solaiman Lipi';
+$category: serif;
+$subsets: (bengali);
+$weights: (400);
+$styles: (normal);
+$axes: null;
+$defaults: (
+	subset: bengali,
+	weight: 400,
+	style: normal,
+	axis: null,
+);
+$unicode: null;
+
+$metadata: (
+  id: $id,
+  family: $family,
+  category: $category,
+  subsets: $subsets,
+  weights: $weights,
+  styles: $styles,
+  axes: $axes,
+  defaults: $defaults,
+  unicode: $unicode,
+) !default;

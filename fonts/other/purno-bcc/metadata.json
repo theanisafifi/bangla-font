@@ -1,0 +1,19 @@
+{
+  "id": "purno-bcc",
+  "family": "Purno BCC",
+  "subsets": ["bengali"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "bengali",
+  "variable": false,
+  "lastModified": "2024-10-01",
+  "version": "v1",
+  "category": "serif",
+  "license": {
+    "type": "OFL-1.1",
+    "url": "https://openfontlicense.org",
+    "attribution": "Copyright 2024 Bangladesh Computer Council"
+  },
+  "source": "other",
+  "type": "other"
+}

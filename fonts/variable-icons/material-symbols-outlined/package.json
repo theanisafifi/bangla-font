@@ -1,5 +1,5 @@
 {
-  "name": "@hixbe-variable/material-symbols-outlined",
+  "name": "@hixbe/material-symbols-outlined-variable",
   "version": "5.2.29",
   "description": "Self-host the Material Symbols Outlined font in a neatly bundled NPM package.",
   "main": "index.css",
@@ -37,7 +37,7 @@
   "author": "Google Inc.",
   "license": "OFL-1.1",
   "homepage": "https://hixbe.com/fonts/material-symbols-outlined",
-  "funding": "https://github.com/sponsors/ayuhito",
+  "funding": "https://github.com/sponsors/hixbe",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hixbe/bangla-font.git",
@@ -45,3 +45,7 @@
   },
   "publishHash": "45b54aa3e170a4b8"
 }
+
+
+
+

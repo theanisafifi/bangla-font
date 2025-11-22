@@ -1,0 +1,19 @@
+{
+  "id": "kalpurush",
+  "family": "Kalpurush",
+  "subsets": ["bengali", "latin"],
+  "weights": [400],
+  "styles": ["normal"],
+  "defSubset": "bengali",
+  "variable": false,
+  "lastModified": "2024-10-01",
+  "version": "v1",
+  "category": "serif",
+  "license": {
+    "type": "OFL-1.1",
+    "url": "https://openfontlicense.org",
+    "attribution": "Copyright 2024 Anirban Mitra"
+  },
+  "source": "other",
+  "type": "other"
+}

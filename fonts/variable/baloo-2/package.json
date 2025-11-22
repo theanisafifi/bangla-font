@@ -1,5 +1,5 @@
 {
-  "name": "@hixbe-variable/baloo-2",
+  "name": "@hixbe/baloo-2-variable",
   "version": "5.2.7",
   "description": "Self-host the Baloo 2 font in a neatly bundled NPM package.",
   "main": "index.css",
@@ -37,7 +37,7 @@
   "author": "Google Inc.",
   "license": "OFL-1.1",
   "homepage": "https://hixbe.com/fonts/baloo-2",
-  "funding": "https://github.com/sponsors/ayuhito",
+  "funding": "https://github.com/sponsors/hixbe",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hixbe/bangla-font.git",
@@ -45,3 +45,5 @@
   },
   "publishHash": "c3d5573744ba517d"
 }
+
+
