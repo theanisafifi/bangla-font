@@ -60,7 +60,7 @@ for dir in fonts/*/*/files; do
       # Upload CSS
       key="s/${id}/font.css"
       echo "Uploading CSS to $key"
-      echo -e "$css" | wrangler r2 object put "public-cdn/$key" --content-type "text/css"
+      echo -e "$css" | wrangler r2 object put "public-cdn/$key" --pipe --content-type "text/css"
     fi
   fi
 done
