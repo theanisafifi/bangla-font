@@ -17,7 +17,7 @@ find fonts -type f \( -name "*.woff" -o -name "*.woff2" \) | while read -r file;
   # Upload font file to R2
   key="s/${id}/v${version}/${filename}"
   echo "Uploading $file to $key"
-  wrangler r2 object put "public-cdn/$key" --file "$file"
+  wrangler r2 object put "public-cdn/$key" --file "$file" --remote
 done
 
 # Generate and upload font.css for each font
@@ -60,7 +60,7 @@ for dir in fonts/*/*/files; do
       # Upload CSS
       key="s/${id}/font.css"
       echo "Uploading CSS to $key"
-      echo -e "$css" | wrangler r2 object put "public-cdn/$key" --pipe --content-type "text/css"
+      echo -e "$css" | wrangler r2 object put "public-cdn/$key" --pipe --content-type "text/css" --remote
     fi
   fi
 done
